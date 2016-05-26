@@ -13,9 +13,9 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: 5
-  username: <%= ENV['MYSQL_USERNAME'] %>
-  password: <%= ENV['MYSQL_PASSWORD'] %>
-  socket: /tmp/mysql.sock
+  username: root
+  password: response
+  socket: /var/run/mysqld/mysqld.sock
 
 development:
   <<: *default
