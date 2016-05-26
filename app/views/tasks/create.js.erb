@@ -1,5 +1,3 @@
-$('#new_task').remove();
+$('#new_task').hide();
 $('#new_link').show();
-if(<% @task.complete? %>){
-  $('<%= j render(@task) %>').appendTo('.warning');
-}
+$('table').append('<%= j render(@task) %>');

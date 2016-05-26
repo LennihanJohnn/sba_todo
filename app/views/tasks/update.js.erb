@@ -1,3 +1,1 @@
-<% if @task.complete? %>
-  $('<% @task.id %>').appendTo('.warning');
-  <% end %>
+$('#<%= @task.id %>').replaceWith('<%= j render(@task) %>');

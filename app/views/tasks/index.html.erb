@@ -1,5 +1,10 @@
 <%= link_to 'New Task', new_task_path, id: 'new_link', remote: true %>
 
 <br>
-
-<%= render 'tasks/table' %>
+<div class="task_form">
+  <% if @tasks.any? %>
+    <%= render 'tasks/table' %>
+  <% else %>
+    <h3>No tasks yet!</h3>
+  <% end %>
+</div>

@@ -5,7 +5,7 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.json
   def index
-    @tasks = Task.all.order(completed: :asc)
+    @tasks = Task.all.order(completed: :asc, completed_at: :desc)
   end
 
   # GET /tasks/1
