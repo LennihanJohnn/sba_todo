@@ -1,0 +1,5 @@
+$('#new_task').remove();
+$('#new_link').show();
+if(<% @task.complete? %>){
+  $('<%= j render(@task) %>').appendTo('.warning');
+}

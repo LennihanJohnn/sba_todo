@@ -31,6 +31,7 @@ class TasksController < ApplicationController
       if @task.save
         format.html { redirect_to root_path, notice: 'Task was successfully created.' }
         format.json { render :show, status: :created, location: @task }
+        format.js
       else
         format.html { render :new }
         format.json { render json: @task.errors, status: :unprocessable_entity }
@@ -46,6 +47,7 @@ class TasksController < ApplicationController
         if @task.update(completed: params[:completed])
           format.html { redirect_to root_path, notice: 'Task was marked as completed.' }
           format.json { render :show, status: :ok, location: @task }
+          format.js
         else
           format.html { render :edit }
           format.json { render json: @task.errors, status: :unprocessable_entity }
@@ -54,6 +56,7 @@ class TasksController < ApplicationController
         if @task.update(task_params)
           format.html { redirect_to root_path, notice: 'Task was successfully updated.' }
           format.json { render :show, status: :ok, location: @task }
+          format.js
         else
           format.html { render :edit }
           format.json { render json: @task.errors, status: :unprocessable_entity }
@@ -69,6 +72,7 @@ class TasksController < ApplicationController
     respond_to do |format|
       format.html { redirect_to root_path, notice: 'Task was successfully destroyed.' }
       format.json { head :no_content }
+      format.js
     end
   end
 

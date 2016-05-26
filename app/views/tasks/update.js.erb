@@ -1,0 +1,3 @@
+<% if @task.complete? %>
+  $('<% @task.id %>').appendTo('.warning');
+  <% end %>
